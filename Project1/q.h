@@ -21,14 +21,5 @@ void initQueue(element *head) {
 
 //Adds item to front of queue
 void addQueue(element *head, element *item) {
-	if (head != NULL) { //If head not NULL
-		if (head->next != NULL) { //Check if other element exists
-			item->next = head->next; //If so, next of new element is original second element
-		}
-		head->next = item;
-		item->prev = head;		
-	}
-	else {
-		head = item;
-	}
+	
 }

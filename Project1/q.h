@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 //Queue item structure. Contains a payload and next and previous pointers
 typedef struct element {

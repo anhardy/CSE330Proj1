@@ -118,6 +118,14 @@ int main() {
 	addQueue(&q3, item10);
 
 	printQueue(&q3);
+
+	//test deleting and adding items 
+	delQueue(&q1);
+	printQueue(&q1);
+	element *newElement = newItem();
+	newElement->payload = 999;
+	addQueue(&q1, newElement);
+	printQueue(&q1);
 	
 	//test deleting queues
 	printf("Deleting all items from q3:\n");
@@ -128,6 +136,8 @@ int main() {
 
 	printf("Deleting all items from q1:\n");
 	emptyQueue(&q1);
+
+
 
 	return 0;
 }

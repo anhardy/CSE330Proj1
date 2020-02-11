@@ -64,7 +64,7 @@ element* delQueue(element **head) {
 	//element *deletedItem = *head;
 	element *tempQueue = *head;
 	element *tempHead = *head;
-	if (tempHead != NULL && tempHead->next != NULL) { //Must have at at least two elements
+	if (tempHead != NULL && tempHead->next != tempHead) { //Must have at at least two elements
 		rotateQueue(&tempQueue);
 		*head = tempQueue;
 	}

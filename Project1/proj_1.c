@@ -32,11 +32,11 @@ void emptyQueue(element **head) {
 	//Delete first queue item if queue is not empty.
 	if (head != NULL) {
 
-		element *temp = delQueue(&tempQueue);
+		element *temp = delQueue(head);
 		returnedValue = (int)temp->payload;
 		printf("Value returned is %d\n", +returnedValue);
 		printf("Remaining payload values in the queue are: \n");
-		printQueue(&tempQueue);
+		printQueue(head);
 
 
 		//Initiate Boolean value for an empty queue to -1(not empty).
@@ -45,7 +45,7 @@ void emptyQueue(element **head) {
 		//Delete remaining queue items.
 		while (queueEmpty != 1)
 		{
-			element *temp = delQueue(&tempQueue);
+			element *temp = delQueue(head);
 			returnedValue = (int)temp->payload;
 
 			//Test if the temp's next value is itself.
@@ -61,7 +61,7 @@ void emptyQueue(element **head) {
 				tempQueue = tempQueue->next;
 
 				printf("Remaining payload values in the queue are: \n");
-				printQueue(&tempQueue);
+				printQueue(head);
 			}
 
 			if (queueEmpty == 1) {
@@ -136,7 +136,15 @@ int main() {
 
 	printf("Deleting all items from q1:\n");
 	emptyQueue(&q1);
-
+	
+	element *newQueueTest = newItem();
+	newQueueTest->payload = 25;
+	addQueue(&q1, newQueueTest);
+	printQueue(&q1);
+	delQueue(&q1);
+	newQueueTest->payload = 55;
+	addQueue(&q1, newQueueTest);
+	printQueue(&q1);
 
 
 	return 0;

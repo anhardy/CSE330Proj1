@@ -24,7 +24,7 @@ Prints payload of each item deleted upon each deletion,
 followed by values of remaining payloads in the queue.
 */
 void emptyQueue(element **head) {
-	element *tempHead = *head;
+	//element *tempHead = *head;
 	element *tempQueue = *head;
 
 	int returnedValue = 0;
